@@ -7,7 +7,12 @@ function CardAdicionar({ onAdicionarTarefa }) {
   function atualizaEstadoTextoTarefa(event) {
     setTextoTarefa(event.target.value);
   }
-
+  function handleAdicionarTarefa() {
+    if (textoTarefa.trim() !== '') {
+      onAdicionarTarefa(textoTarefa);
+      setTextoTarefa('');
+    }
+  }
   
   return (
     <div>
