@@ -20,7 +20,7 @@ function CardAdicionar({ onAdicionarTarefa }) {
         type="text"
         placeholder="Adicionar tarefa"
         value={textoTarefa}
-        onChange={handleInputChange}
+        onChange={atualizaEstadoTextoTarefa}
       />
       <button onClick={handleAdicionarTarefa}>Adicionar</button>
     </div>
