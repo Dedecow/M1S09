@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import CardAdicionar from './componentes/CardAdicionar';
 
 function App() {
   const [count, setCount] = useState(0)
