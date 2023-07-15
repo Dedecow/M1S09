@@ -14,7 +14,7 @@ function CardAdicionar(props) {
     props.adicionarTarefa(textoTarefa);
     setTextoTarefa("");
     }
-  }
+  
   
   //function handleAdicionarTarefa() {
   //  setTextoTarefa(adicionarTarefa);
