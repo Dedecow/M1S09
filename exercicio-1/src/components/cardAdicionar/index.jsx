@@ -1,41 +1,39 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const CardAdicionar = () => {
-  const [valor, setValor] = useState('');
-  const [tarefas, setTarefas] = useState([]);
+function CardAdicionar(props) {
 
-  const isValorValido = valor.trim() !== '';
+  const [textoTarefa, setTextoTarefa] = useState("");
+  
+// const isValorValido = valor.trim() !== '';
+// function atualizarValor(event) {
+//   setTextoTarefa(event.target.value);
+// }
 
-  const atualizarValor = (event) => {
-    setValor(event.target.value);
-  }
 
-  const adicionarTarefa = (tarefasAntigas) => {
-    if (isValorValido) {
-      return [...tarefasAntigas, valor];
-    } else {
-      return tarefasAntigas;
+  function handleAdicionarTarefa() {
+    props.adicionarTarefa(textoTarefa);
+    setTextoTarefa("");
     }
   }
   
-  const handleAdicionarTarefa = () => {
-    setTarefas(adicionarTarefa);
-    setValor('');
-  }
+  //function handleAdicionarTarefa() {
+  //  setTextoTarefa(adicionarTarefa);
+  //  setTextoTarefa('');
+  //}
 
-  const limparTabela = () => {
-    setTarefas([]);
-  }
+  //const limparTabela = () => {
+  //  setTarefas([]);
+  //}
 
   return (
     <div>
       <input 
         type="text"
         placeholder="Adicionar tarefa"
-        value={valor} 
-        onChange={atualizarValor} 
+        value={textoTarefa} 
+        onChange={(evento)=> setTextoTarefa(evento.target.value)} 
       />
-      <button onClick={handleAdicionarTarefa}>Adicionar</button>
+      <button onClick={()=>handleAdicionarTarefa()}>Adicionar</button>
     </div>
   );
 }
