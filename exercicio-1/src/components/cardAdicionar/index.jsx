@@ -27,6 +27,7 @@ function CardAdicionar(props) {
 
   return (
     <div>
+      <h1>Texto da tarefa : {textoTarefa}</h1>
       <input 
         type="text"
         placeholder="Adicionar tarefa"
