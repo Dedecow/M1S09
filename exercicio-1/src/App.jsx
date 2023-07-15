@@ -7,6 +7,7 @@ function App() {
   return (
     <>
       <div>
+        <h1> Exercicio 1 Concluido ! ! ! </h1>
         
       </div>
      
@@ -15,11 +16,9 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
       </p>
     </>
   )
