@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import CardAdicionar from './components/cardAdicionar'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -7,7 +8,9 @@ function App() {
   return (
     <>
       <div>
-        <h1> Exercicio 1 Concluido ! ! ! </h1>
+        <h1> Exercicio 2 Concluido ! ! ! </h1>
+        <CardAdicionar/>
+        
         
       </div>
      
