@@ -6,13 +6,16 @@ import CardAdicionar from './components/cardAdicionar'
 function App() {
 
   const [listaTarefas, setListaTarefas] = useState([
-    {textoTarefa: "tarefa 1", finalizado: false}
+    {Id: 1, textoTarefa: "tarefa 1", finalizado: false}
   ]);
-
+  const addTarefa = (texto) => {
+    const novaTarefa = {Id: listaTarefas.length + 1 , textoTarefa: texto, finalizado: false}
+    setListaTarefas = (novaTarefa)
+  }
   return (
     <>
       <div>
-        <h1> Exercicio 3 Concluido ! ! ! </h1>
+        <h1> Exercicio 4 Concluido ! ! ! </h1>
         <CardAdicionar/>
         
         
