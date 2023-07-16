@@ -4,12 +4,15 @@ import CardAdicionar from './components/cardAdicionar'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [listaTarefas, setListaTarefas] = useState([
+    {textoTarefa: "tarefa 1", finalizado: false}
+  ]);
 
   return (
     <>
       <div>
-        <h1> Exercicio 2 Concluido ! ! ! </h1>
+        <h1> Exercicio 3 Concluido ! ! ! </h1>
         <CardAdicionar/>
         
         
