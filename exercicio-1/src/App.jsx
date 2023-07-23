@@ -1,41 +1,32 @@
+import React, { useState } from 'react';
 import CardAdicionar from './components/CardAdicionar';
-
-import {useState} from 'react';
-
+import ListItem from './components/ListItem';
 
 function App() {
+  const [listaTarefas, setListaTarefas] = useState([]);
 
-const [listaTarefas, setListaTarefas] = useState ([
+  const adicionarTarefa = (texto) => {
+    const novaTarefa = { Id: listaTarefas.length + 1, textoTarefa: texto, finalizado: false };
+    setListaTarefas([...listaTarefas, novaTarefa]);
+  }
 
-{Id: 1, textoTarefa: "Tarefa 1", finalizado: false}
+  const finalizarTarefa = (tarefaId) => {
+    setListaTarefas((prevState) =>
+      prevState.map((tarefa) =>
+        tarefa.Id === tarefaId ? { ...tarefa, finalizado: !tarefa.finalizado } : tarefa
+      )
+    );
+  };
 
-])
-
-
-var adicionarTarefa = (texto) => {
-
-var novaTarefa = {Id:listaTarefas.lenght +1, textoTarefa: "Tarefa1", finalizado: false}
-
-setListaTarefas = [...listaTarefas, setListaTarefas]
-
+  return (
+    <>
+      <div>
+        <CardAdicionar adicionarTarefa={adicionarTarefa} />
+        <h1>Tarefas:</h1>
+        <ListItem listaTarefas={listaTarefas} finalizarTarefa={finalizarTarefa} />
+      </div>
+    </>
+  )
 }
-
-
-return (
-
-<>
-
-<CardAdicionar/>
-
-<div>{ listaTarefas.map(tarefa => {<spam> {tarefa.textoTarefa} </spam>})}
-
-</div>
-
-</>
-
-);
-
-}
-
 
 export default App;

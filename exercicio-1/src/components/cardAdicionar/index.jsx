@@ -1,54 +1,32 @@
 import React, { useState } from 'react';
 
+function CardAdicionar(props) {
+  const [valorInput, setValorInput] = useState('');
 
-function CardAdicionar() {
+  const manipulaAlteracaoInput = (e) => {
+    setValorInput(e.target.value);
+  };
 
-const [valorImput, setValorImput] = useState('');
+  const handleButtonClick = () => {
+    if (valorInput.trim() !== '') {
+      props.adicionarTarefa(valorInput);
+      setValorInput('');
+    }
+  };
 
-
-const manipulaAlteracaoImput = (e) => {
-
-setValorImput(e.target.value);
-
-};
-
-
-const handleButtonClick = () => {
-
-setValorImput(valorImput);
-
-};
-
-
-return (
-
-<>
-
-<div>
-
-<input 
-
-type="text"
-
-placeholder="adicionar tarefa"
-
-value={valorImput}
-
-onChange={manipulaAlteracaoImput}
-
-/>
-
-<button onClick={handleButtonClick}>Adicionar</button>
-
-</div>
-
-<h1>Tarefas{valorImput}</h1>
-
-</>
-
-);
-
+  return (
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Adicionar tarefa"
+          value={valorInput}
+          onChange={manipulaAlteracaoInput}
+        />
+        <button onClick={handleButtonClick}>Adicionar</button>
+      </div>
+    </>
+  );
 }
-
 
 export default CardAdicionar;
