@@ -18,12 +18,22 @@ function App() {
     );
   };
 
+  const apagarTarefa = (tarefaId) => {
+    setListaTarefas((prevState) =>
+      prevState.filter((tarefa) => tarefa.Id !== tarefaId)
+    );
+  };
+
   return (
     <>
       <div>
         <CardAdicionar adicionarTarefa={adicionarTarefa} />
         <h1>Tarefas:</h1>
-        <ListItem listaTarefas={listaTarefas} finalizarTarefa={finalizarTarefa} />
+        <ListItem
+          listaTarefas={listaTarefas}
+          finalizarTarefa={finalizarTarefa}
+          apagarTarefa={apagarTarefa}
+        />
       </div>
     </>
   )

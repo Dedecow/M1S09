@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 
 function CardAdicionar(props) {
-  const [valorInput, setValorInput] = useState('');
+  const [valorImput, setValorImput] = useState('');
 
-  const manipulaAlteracaoInput = (e) => {
-    setValorInput(e.target.value);
+  const manipulaAlteracaoImput = (e) => {
+    setValorImput(e.target.value);
   };
 
   const handleButtonClick = () => {
-    if (valorInput.trim() !== '') {
-      props.adicionarTarefa(valorInput);
-      setValorInput('');
+    if (valorImput.trim() !== '') {
+      props.adicionarTarefa(valorImput);
+      setValorImput('');
     }
   };
 
@@ -19,9 +19,9 @@ function CardAdicionar(props) {
       <div>
         <input
           type="text"
-          placeholder="Adicionar tarefa"
-          value={valorInput}
-          onChange={manipulaAlteracaoInput}
+          placeholder="adicionar tarefa"
+          value={valorImput}
+          onChange={manipulaAlteracaoImput}
         />
         <button onClick={handleButtonClick}>Adicionar</button>
       </div>

@@ -9,6 +9,7 @@ function ListItem(props) {
           <button onClick={() => props.finalizarTarefa(tarefa.Id)}>
             {tarefa.finalizado ? "Desfazer" : "Finalizar"}
           </button>
+          <button onClick={() => props.apagarTarefa(tarefa.Id)}>Apagar</button>
         </li>
       ))}
     </ul>
