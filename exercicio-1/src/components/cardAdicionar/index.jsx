@@ -1,42 +1,54 @@
-import { useState } from 'react';
-
-function CardAdicionar(props) {
-
-  const [textoTarefa, setTextoTarefa] = useState("");
-  
-// const isValorValido = valor.trim() !== '';
-// function atualizarValor(event) {
-//   setTextoTarefa(event.target.value);
-// }
+import React, { useState } from 'react';
 
 
-  function handleAdicionarTarefa() {
-    props.adicionarTarefa(textoTarefa);
-    setTextoTarefa("");
-    }
-  
-  
-  //function handleAdicionarTarefa() {
-  //  setTextoTarefa(adicionarTarefa);
-  //  setTextoTarefa('');
-  //}
+function CardAdicionar() {
 
-  //const limparTabela = () => {
-  //  setTarefas([]);
-  //}
+const [valorImput, setValorImput] = useState('');
 
-  return (
-    <div>
-      <h1>Texto da tarefa : {textoTarefa}</h1>
-      <input 
-        type="text"
-        placeholder="Adicionar tarefa"
-        value={textoTarefa} 
-        onChange={(evento)=> setTextoTarefa(evento.target.value)} 
-      />
-      <button onClick={()=>handleAdicionarTarefa()}>Adicionar</button>
-    </div>
-  );
+
+const manipulaAlteracaoImput = (e) => {
+
+setValorImput(e.target.value);
+
+};
+
+
+const handleButtonClick = () => {
+
+setValorImput(valorImput);
+
+};
+
+
+return (
+
+<>
+
+<div>
+
+<input 
+
+type="text"
+
+placeholder="adicionar tarefa"
+
+value={valorImput}
+
+onChange={manipulaAlteracaoImput}
+
+/>
+
+<button onClick={handleButtonClick}>Adicionar</button>
+
+</div>
+
+<h1>Tarefas{valorImput}</h1>
+
+</>
+
+);
+
 }
+
 
 export default CardAdicionar;
