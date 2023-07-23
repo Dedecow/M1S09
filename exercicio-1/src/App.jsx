@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import CardAdicionar from './components/CardAdicionar';
 import ListItem from './components/ListItem';
+import './App.css';
 
 function App() {
   const [listaTarefas, setListaTarefas] = useState([]);
